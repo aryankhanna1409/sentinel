@@ -1,0 +1,32 @@
+# Deep Learning
+torch
+torchvision
+torchaudio
+
+# Object Detection
+ultralytics
+
+# Computer Vision
+opencv-python
+Pillow
+
+# Data Processing
+numpy
+pandas
+matplotlib
+scikit-learn
+
+# Dataset Utilities
+pyyaml
+tqdm
+
+# Jupyter
+notebook
+ipykernel
+
+# Annotation & COCO Support
+pycocotools
+
+# Utilities
+requests
+gdown
