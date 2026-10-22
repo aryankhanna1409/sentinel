@@ -14,6 +14,10 @@
 
 ---
 
+> 🔬 **Research context:** Sentinel is part of my research assistantship at Symbiosis Institute of Technology: a multimodal search-and-rescue system where RGB loses detail in low light and thermal alone lacks context, so the two views are fused. Field testing is still to come.
+
+---
+
 <div align="center">
 
 ![Sentinel HUD demo](assets/demo.gif)
