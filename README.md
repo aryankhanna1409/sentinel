@@ -24,6 +24,40 @@
 
 ---
 
+## 🚀 Sentinel Command (presentation HUD)
+
+`sentinel_command.py` wraps the **same `best.onnx`** (unchanged) in a much richer live interface.
+
+<div align="center">
+
+![Sentinel Command demo](assets/command_demo.gif)
+
+<sub>Real run on public sample pedestrian footage: tracking, trails, heatmap, radar, event log, then the 2x2 tri-spectral wall.</sub>
+
+</div>
+
+| | |
+|---|---|
+| 🔢 **Multi-target tracking** | Persistent IDs, motion trails and smoothed boxes across frames |
+| 🆘 **Casualty logic** | A person who stays still **and lies down** (wide, low box) for 3 s is flagged as a possible casualty, with a flashing alert, a priority directive and a red radar blip. Upright people who stop are only marked "holding" |
+| 📡 **Radar** | Top-down bearing and range blips for every tracked person |
+| 🌗 **Four imaging modes** | RGB, green night-vision NIR (CLAHE, noise, vignette), inferno thermal, and thermal + edge fusion |
+| 🧱 **Tri-spectral wall** | Press `v` for all four views at once, with one inference shared across them |
+| 🔥 **Density heatmap** | Where people have been, decaying over time (`h`) |
+| 🎬 **Record and snapshot** | `r` records an MP4, `s` saves a PNG, `a` auto-cycles the modes for a hands-free demo |
+
+```bash
+pip install opencv-python numpy onnxruntime        # ultralytics is optional; it is used if installed
+python sentinel_command.py                          # webcam
+python sentinel_command.py --source clip.mp4 --auto --heat
+```
+
+Keys: `1` RGB · `2` NIR · `3` thermal · `4` fusion · `v` wall · `h` heatmap · `a` auto-cycle · `r` record · `s` snapshot · `q` quit.
+
+The NIR and thermal views are simulated from the RGB feed, and distance is a pinhole estimate from box height, so treat ranges as approximate. The casualty cue depends on box shape, so it needs a clear side or oblique view.
+
+---
+
 ## 🎯 Why Sentinel
 
 In disaster zones people are partly buried, hidden behind debris or lying in the dark. A detector tuned for clean street scenes misses them. Sentinel trains a YOLO11n model (the shipped `best.onnx` detects three classes: person, face and hand) with tooling for **CrowdHuman**, a dataset full of heavily overlapping and partially hidden people, and wraps it in a handheld-style heads-up display that works across imaging modes.
