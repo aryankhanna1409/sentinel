@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛰️ Sentinel
+<img src="assets/banner.svg" width="100%" alt="Sentinel: Occlusion-aware human detection for search and rescue" />
 
 **A portable AI scanner for search and rescue: real-time, occlusion-aware human detection across RGB, near-infrared and thermal views.**
 
