@@ -14,9 +14,19 @@
 
 ---
 
+<div align="center">
+
+![Sentinel HUD demo](assets/demo.gif)
+
+<sub>Real run of <code>tactical_dashboard.py</code> with the repo's <code>best.onnx</code> on public sample pedestrian footage (RGB → simulated NIR → simulated thermal).</sub>
+
+</div>
+
+---
+
 ## 🎯 Why Sentinel
 
-In disaster zones people are partly buried, hidden behind debris or lying in the dark. A detector tuned for clean street scenes misses them. Sentinel trains a YOLO model on **CrowdHuman**, a dataset full of heavily overlapping and partially hidden people, and wraps it in a handheld-style heads-up display that works across imaging modes.
+In disaster zones people are partly buried, hidden behind debris or lying in the dark. A detector tuned for clean street scenes misses them. Sentinel trains a YOLO11n model (the shipped `best.onnx` detects three classes: person, face and hand) with tooling for **CrowdHuman**, a dataset full of heavily overlapping and partially hidden people, and wraps it in a handheld-style heads-up display that works across imaging modes.
 
 ---
 
@@ -24,7 +34,7 @@ In disaster zones people are partly buried, hidden behind debris or lying in the
 
 | | |
 |---|---|
-| 👁️ **Occlusion-aware detection** | Trained on CrowdHuman, built for crowded and partially hidden people |
+| 👁️ **Occlusion-aware detection** | Detects person, face and hand; the repo includes CrowdHuman tooling for crowded, partially hidden scenes |
 | 🌗 **Multi-spectral modes** | Switch live between **RGB**, simulated **NIR** and simulated **Thermal** (false-colour) |
 | 📏 **Range estimate** | Distance to the nearest person from bounding-box height (pinhole model, 1.7 m reference height) |
 | 🎯 **Targeting HUD** | Crosshair, target lock on the closest person, and a steering directive: steer left, steer right, approach, or stop |
