@@ -1,20 +1,19 @@
 <div align="center">
 
-<img src="assets/banner.svg" width="100%" alt="Sentinel: Occlusion-aware human detection for search and rescue" />
+<img src="assets/banner.svg" width="100%" alt="sentinel: stop 2 of 5 in the loop, SEE" />
 
 **A portable AI scanner for search and rescue: real-time, occlusion-aware human detection across RGB, near-infrared and thermal views.**
 
-![YOLO](https://img.shields.io/badge/Ultralytics-YOLO-00FFFF?style=flat-square&logo=yolo&logoColor=black)
-![PyTorch](https://img.shields.io/badge/PyTorch-training-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-live%20HUD-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
-![ONNX](https://img.shields.io/badge/ONNX-edge%20inference-005CED?style=flat-square&logo=onnx&logoColor=white)
-![Colab](https://img.shields.io/badge/Trained%20on-Google%20Colab-F9AB00?style=flat-square&logo=googlecolab&logoColor=white)
+
+![YOLO Ultralytics](https://img.shields.io/badge/YOLO-Ultralytics-000000?style=flat-square&labelColor=ffffff) ![PyTorch training](https://img.shields.io/badge/PyTorch-training-000000?style=flat-square&labelColor=ffffff) ![OpenCV live HUD](https://img.shields.io/badge/OpenCV-live_HUD-000000?style=flat-square&labelColor=ffffff) ![ONNX edge inference](https://img.shields.io/badge/ONNX-edge_inference-000000?style=flat-square&labelColor=ffffff) ![Trained on Google Colab](https://img.shields.io/badge/Trained_on-Google_Colab-000000?style=flat-square&labelColor=ffffff)
 
 </div>
 
+> **Stop 2 of 5 · SEE.** Once a machine can move, it has to see. This stop turns raw RGB and thermal frames into detections. Previous: [autonomous-bot](https://github.com/aryankhanna1409/autonomous-bot). Next: [finintel](https://github.com/aryankhanna1409/finintel). See [the whole loop](https://github.com/aryankhanna1409).
+
 ---
 
-> 🔬 **Research context:** Sentinel is part of my research assistantship at Symbiosis Institute of Technology: a multimodal search-and-rescue system where RGB loses detail in low light and thermal alone lacks context, so the two views are fused. Field testing is still to come.
+> **Research context:** Sentinel is part of my research assistantship at Symbiosis Institute of Technology: a multimodal search-and-rescue system where RGB loses detail in low light and thermal alone lacks context, so the two views are fused. Field testing is still to come.
 
 ---
 
@@ -28,7 +27,7 @@
 
 ---
 
-## 🚀 Sentinel Command (presentation HUD)
+## Sentinel Command (presentation HUD)
 
 `sentinel_command.py` wraps the **same `best.onnx`** (unchanged) in a much richer live interface.
 
@@ -42,13 +41,13 @@
 
 | | |
 |---|---|
-| 🔢 **Multi-target tracking** | Persistent IDs, motion trails and smoothed boxes across frames |
-| 🆘 **Casualty logic** | A person who stays still **and lies down** (wide, low box) for 3 s is flagged as a possible casualty, with a flashing alert, a priority directive and a red radar blip. Upright people who stop are only marked "holding" |
-| 📡 **Radar** | Top-down bearing and range blips for every tracked person |
-| 🌗 **Four imaging modes** | RGB, green night-vision NIR (CLAHE, noise, vignette), inferno thermal, and thermal + edge fusion |
-| 🧱 **Tri-spectral wall** | Press `v` for all four views at once, with one inference shared across them |
-| 🔥 **Density heatmap** | Where people have been, decaying over time (`h`) |
-| 🎬 **Record and snapshot** | `r` records an MP4, `s` saves a PNG, `a` auto-cycles the modes for a hands-free demo |
+| **Multi-target tracking** | Persistent IDs, motion trails and smoothed boxes across frames |
+| **Casualty logic** | A person who stays still **and lies down** (wide, low box) for 3 s is flagged as a possible casualty, with a flashing alert, a priority directive and a red radar blip. Upright people who stop are only marked "holding" |
+| **Radar** | Top-down bearing and range blips for every tracked person |
+| **Four imaging modes** | RGB, green night-vision NIR (CLAHE, noise, vignette), inferno thermal, and thermal + edge fusion |
+| **Tri-spectral wall** | Press `v` for all four views at once, with one inference shared across them |
+| **Density heatmap** | Where people have been, decaying over time (`h`) |
+| **Record and snapshot** | `r` records an MP4, `s` saves a PNG, `a` auto-cycles the modes for a hands-free demo |
 
 ```bash
 pip install opencv-python numpy onnxruntime        # ultralytics is optional; it is used if installed
@@ -62,25 +61,25 @@ The NIR and thermal views are simulated from the RGB feed, and distance is a pin
 
 ---
 
-## 🎯 Why Sentinel
+## Why Sentinel
 
 In disaster zones people are partly buried, hidden behind debris or lying in the dark. A detector tuned for clean street scenes misses them. Sentinel trains a YOLO11n model (the shipped `best.onnx` detects three classes: person, face and hand) with tooling for **CrowdHuman**, a dataset full of heavily overlapping and partially hidden people, and wraps it in a handheld-style heads-up display that works across imaging modes.
 
 ---
 
-## ✨ Features
+## Features
 
 | | |
 |---|---|
-| 👁️ **Occlusion-aware detection** | Detects person, face and hand; the repo includes CrowdHuman tooling for crowded, partially hidden scenes |
-| 🌗 **Multi-spectral modes** | Switch live between **RGB**, simulated **NIR** and simulated **Thermal** (false-colour) |
-| 📏 **Range estimate** | Distance to the nearest person from bounding-box height (pinhole model, 1.7 m reference height) |
-| 🎯 **Targeting HUD** | Crosshair, target lock on the closest person, and a steering directive: steer left, steer right, approach, or stop |
-| ⚡ **Fast inference** | ONNX export for lightweight, CPU-friendly runtime |
+| **Occlusion-aware detection** | Detects person, face and hand; the repo includes CrowdHuman tooling for crowded, partially hidden scenes |
+| **Multi-spectral modes** | Switch live between **RGB**, simulated **NIR** and simulated **Thermal** (false-colour) |
+| **Range estimate** | Distance to the nearest person from bounding-box height (pinhole model, 1.7 m reference height) |
+| **Targeting HUD** | Crosshair, target lock on the closest person, and a steering directive: steer left, steer right, approach, or stop |
+| **Fast inference** | ONNX export for lightweight, CPU-friendly runtime |
 
 ---
 
-## 🧠 How it works
+## How it works
 
 ```mermaid
 flowchart LR
@@ -99,11 +98,11 @@ flowchart LR
 
 **Detection threshold:** confidence is fixed at **0.33**, the point chosen from the model's F1 curve.
 
-> ℹ️ The NIR and Thermal modes are **software simulations** applied to a normal webcam feed (contrast equalisation and a JET colour map). They demonstrate the pipeline; real NIR or LWIR sensors would plug into the same loop.
+> ️ The NIR and Thermal modes are **software simulations** applied to a normal webcam feed (contrast equalisation and a JET colour map). They demonstrate the pipeline; real NIR or LWIR sensors would plug into the same loop.
 
 ---
 
-## 📁 Repository layout
+## Repository layout
 
 | Path | What it is |
 |---|---|
@@ -118,7 +117,7 @@ flowchart LR
 
 ---
 
-## 🚀 Quick start
+## Quick start
 
 ```bash
 git clone https://github.com/aryankhanna1409/sentinel.git
@@ -148,7 +147,7 @@ python dashboard.py
 
 ---
 
-## 🏋️ Reproducing the training
+## Reproducing the training
 
 1. Open `colab code.ipynb` in Google Colab (badge inside the notebook) and select a GPU runtime.
 2. Download CrowdHuman with `notebooks/02_download_datasets.ipynb`.
@@ -160,5 +159,15 @@ python dashboard.py
 <div align="center">
 
 Made by [Aryan Khanna](https://github.com/aryankhanna1409)
+
+</div>
+
+---
+
+<div align="center">
+
+<img src="assets/loop.svg" width="100%" alt="sentinel is one stop in a loop: move, see, know, act, ship" />
+
+<sub>Part of <a href="https://github.com/aryankhanna1409">Aryan Khanna's portfolio</a>: one loop, five stops, from robots to AI systems.</sub>
 
 </div>
