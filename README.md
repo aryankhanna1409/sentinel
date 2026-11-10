@@ -113,6 +113,7 @@ flowchart LR
 | `colab code.ipynb` | End-to-end Colab workflow: setup, dataset prep, YOLO conversion |
 | `notebooks/` | Environment check and dataset download notebooks |
 | `scripts/convert_crowdhuman_to_yolo.py` | CrowdHuman `.odgt` annotations → YOLO label format |
+| `augmentation/` | Experimental style-transfer module for synthesising weather and occlusion (not part of the pipeline) |
 | `requirements.txt` | Python dependencies |
 
 ---
