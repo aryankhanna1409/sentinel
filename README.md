@@ -5,11 +5,11 @@
 **A portable AI scanner for search and rescue: real-time, occlusion-aware human detection across RGB, near-infrared and thermal views.**
 
 
-![YOLO Ultralytics](https://img.shields.io/badge/YOLO-Ultralytics-000000?style=flat-square&labelColor=ffffff) ![PyTorch training](https://img.shields.io/badge/PyTorch-training-000000?style=flat-square&labelColor=ffffff) ![OpenCV live HUD](https://img.shields.io/badge/OpenCV-live_HUD-000000?style=flat-square&labelColor=ffffff) ![ONNX edge inference](https://img.shields.io/badge/ONNX-edge_inference-000000?style=flat-square&labelColor=ffffff) ![Trained on Google Colab](https://img.shields.io/badge/Trained_on-Google_Colab-000000?style=flat-square&labelColor=ffffff)
+![YOLO Ultralytics](https://img.shields.io/badge/YOLO-Ultralytics-8a5a22?style=flat-square&labelColor=1d120b) ![PyTorch training](https://img.shields.io/badge/PyTorch-training-8a5a22?style=flat-square&labelColor=1d120b) ![OpenCV live HUD](https://img.shields.io/badge/OpenCV-live_HUD-8a5a22?style=flat-square&labelColor=1d120b) ![ONNX edge inference](https://img.shields.io/badge/ONNX-edge_inference-8a5a22?style=flat-square&labelColor=1d120b) ![Trained on Google Colab](https://img.shields.io/badge/Trained_on-Google_Colab-8a5a22?style=flat-square&labelColor=1d120b)
 
 </div>
 
-> **Stop 2 of 5 · SEE.** Once a machine can move, it has to see. This stop turns raw RGB and thermal frames into detections. Previous: [autonomous-bot](https://github.com/aryankhanna1409/autonomous-bot). Next: [finintel](https://github.com/aryankhanna1409/finintel). See [the whole loop](https://github.com/aryankhanna1409).
+> **Stop 2 of 5 · SEE · the Bloom.** Once a machine can move, it has to see. This stop turns raw RGB and thermal frames into detections. Previous: [autonomous-bot](https://github.com/aryankhanna1409/autonomous-bot). Next: [finintel](https://github.com/aryankhanna1409/finintel). See [the whole loop](https://github.com/aryankhanna1409).
 
 ---
 
@@ -166,8 +166,8 @@ Made by [Aryan Khanna](https://github.com/aryankhanna1409)
 
 <div align="center">
 
-<img src="assets/loop.svg" width="100%" alt="sentinel is one stop in a loop: move, see, know, act, ship" />
+<img src="assets/loop.svg" width="100%" alt="sentinel is one pour in a loop: move, see, know, act, ship" />
 
-<sub>Part of <a href="https://github.com/aryankhanna1409">Aryan Khanna's portfolio</a>: one loop, five stops, from robots to AI systems.</sub>
+<sub>Part of <a href="https://github.com/aryankhanna1409">Aryan Khanna's portfolio</a>: one loop, five pours, from robots to AI systems.</sub>
 
 </div>
