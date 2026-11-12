@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.svg" width="100%" alt="sentinel: stop 2 of 5 in the loop, SEE" />
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg" /><img src="assets/banner.svg" width="100%" alt="sentinel: stop 2 of 5 in the loop, SEE" /></picture>
 
 **A portable AI scanner for search and rescue: real-time, occlusion-aware human detection across RGB, near-infrared and thermal views.**
 
@@ -166,7 +166,7 @@ Made by [Aryan Khanna](https://github.com/aryankhanna1409)
 
 <div align="center">
 
-<img src="assets/loop.svg" width="100%" alt="sentinel is one pour in a loop: move, see, know, act, ship" />
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/loop-light.svg" /><img src="assets/loop.svg" width="100%" alt="sentinel is one pour in a loop: move, see, know, act, ship" /></picture>
 
 <sub>Part of <a href="https://github.com/aryankhanna1409">Aryan Khanna's portfolio</a>: one loop, five pours, from robots to AI systems.</sub>
 
